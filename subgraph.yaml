@@ -1,0 +1,51 @@
+specVersion: 0.0.2
+description: Pine Finance orders
+repository: https://github.com/traxfolio/orders
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: ERC20
+    network: rinkeby
+    source:
+      abi: ERC20
+      startBlock: 8044911
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      language: wasm/assemblyscript
+      entities:
+        - Order
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+        - name: Traxcore
+          file: ./abis/TraxCore.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleERC20Transfer
+      file: ./src/handlers/ERC20.ts
+  - kind: ethereum/contract
+    name: TraxCore
+    network: rinkeby
+    source:
+      abi: TraxCore
+      startBlock: 8044911
+      address: '0xdbaae94d69743c1afae083f1d08fd44f337ad65a'
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      language: wasm/assemblyscript
+      entities:
+        - Order
+      abis:
+        - name: TraxCore
+          file: ./abis/TraxCore.json
+      eventHandlers:
+        - event: DepositETH(indexed bytes32,indexed address,uint256,bytes)
+          handler: handleETHOrderCreated
+        - event: OrderExecuted(indexed bytes32,address,address,address,bytes,bytes,uint256,uint256)
+          handler: handleOrderExecuted
+        - event: OrderCancelled(indexed bytes32,address,address,address,bytes,uint256)
+          handler: handleOrderCancelled
+      file: ./src/handlers/Order.ts
