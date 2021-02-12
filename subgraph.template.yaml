@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: Pine Finance orders
-repository: https://github.com/traxfolio/orders
+repository: https://github.com/kiran-blockchain/demo-orders
 schema:
   file: ./schema.graphql
 dataSources:
