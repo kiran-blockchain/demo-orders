@@ -9,7 +9,7 @@ dataSources:
     network: rinkeby
     source:
       abi: ERC20
-      startBlock: 8044911
+      startBlock: 8052416
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.3
