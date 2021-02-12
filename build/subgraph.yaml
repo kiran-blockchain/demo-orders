@@ -9,7 +9,7 @@ dataSources:
     network: rinkeby
     source:
       abi: ERC20
-      startBlock: 8044911
+      startBlock: 805415
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.3
@@ -30,7 +30,7 @@ dataSources:
     network: rinkeby
     source:
       abi: TraxCore
-      startBlock: 8044911
+      startBlock: 805415
       address: "0xdbaae94d69743c1afae083f1d08fd44f337ad65a"
     mapping:
       kind: ethereum/events
