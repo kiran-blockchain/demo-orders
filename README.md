@@ -1,7 +1,8 @@
-# Pine Finance orders graph
+# TraxFolio Finance orders graph
 
 - Mainnet: https://thegraph.com/explorer/subgraph/trax/trax_orders
-- Rinkeby: https://thegraph.com/explorer/subgraph/trax/trax_orders_rinkeby
+- Rinkeby: thegraph.com/explorer/kiran-blockchain/demo-traxfoilo-vone
+
 
 ### Install
 
