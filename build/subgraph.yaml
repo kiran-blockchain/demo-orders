@@ -19,7 +19,7 @@ dataSources:
       abis:
         - name: ERC20
           file: ERC20/abis/ERC20.json
-        - name: Traxcore
+        - name: TraxCore
           file: ERC20/abis/TraxCore.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
